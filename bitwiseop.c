@@ -65,12 +65,6 @@
   		  parity=0;
   		  else
   			  parity=1;
-  	  /*while(bytes)
-  	  {
-  		  parity=(parity^(bytes&1));
-  		  bytes>>1;
-
-  	  }*/
   	  return parity;
 
     }
