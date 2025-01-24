@@ -16,7 +16,7 @@
     {
   	  uint8_t sectorbits=0;
   	  int prevsector=2;
-  	  if(n=-1)
+  	  if(n==-1)
   	  {
   		  if(prevsector>=0&&prevsector<=2)
   			  n=prevsector+1;
@@ -53,18 +53,18 @@
   	  uint8_t parity;
   	  int onecount,no;
 
-  	  while(bytes!=0)
+  	  while(bytes)
   	  {
-  		  no=bytes%10;
+  		  no=bytes&1;
   		  if(no==1)
   			  onecount++;
-  		  bytes=bytes/10;
+  		  bytes=bytes>>1;
   	  }
 
-  	  if((onecount%2)!=0)
-  		  parity=1;
+  	  if((onecount%2)==0)
+  		  parity=0;
   		  else
-  			  parity=0;
+  			  parity=1;
   	  /*while(bytes)
   	  {
   		  parity=(parity^(bytes&1));
