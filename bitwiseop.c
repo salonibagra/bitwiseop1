@@ -55,16 +55,10 @@
 
   	  while(bytes)
   	  {
-  		  no=bytes&1;
-  		  if(no==1)
-  			  onecount++;
-  		  bytes=bytes>>1;
-  	  }
+  		  parity=(parity^(bytes&1));
+  		  bytes>>1;
+      }
 
-  	  if((onecount%2)==0)
-  		  parity=0;
-  		  else
-  			  parity=1;
   	  return parity;
 
     }
